@@ -9,6 +9,6 @@ def parse():
     description = ''# ВАЖНО:description строковая переменная для хранения названий факультетов
     for data in block: # проходим циклом по содержимому контейнера
         description = data.find("ul").text.strip() # Находим тег <ul> в текущем блоке и извлекаем название факультета
-        description = '\n'.join(filter(None, description.split("\n")))# Удаляем пустые строки в тексте и объединяем все строки в одну с помощью символа переноса строки
+    description = '\n'.join(filter(None, description.split("\n")))# Удаляем пустые строки в тексте и объединяем все строки в одну с помощью символа переноса строки
     with open("res.txt", "w") as file:# Открываем файл "res.txt" в режиме записи и записываем в него полученный текст
         file.write(description)
